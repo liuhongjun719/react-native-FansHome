@@ -2,12 +2,12 @@
 基于react native开源项目reading实现的一款比较完整的app“车迷之家”，包含图片轮播、下拉刷新、上拉加载等功能。
 
 ## Screenshot
-![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshots/1.png)
-![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshots/2.png)
-![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshots/3.png)
-![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshots/4.png)
-![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshots/5.png)
-![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshots/6.png)
+![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshot/1.png)
+![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshot/2.png)
+![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshot/3.png)
+![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshot/4.png)
+![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshot/5.png)
+![image](https://github.com/liuhongjun719/FansHome/blob/master/screenshot/6.png)
 
 
 
