@@ -155,20 +155,19 @@ class MessagePage extends React.Component {
     //创建 添加评论 界面
     renderModalContent() {
       return(
-        <View style = {{height: maxHeight, widht: maxWidth, backgroundColor: 'rgba(255, 255, 255, 0.65)', flexDirection: 'column'}}>
+        <View style = {styles.comment_back_view}>
           <TouchableOpacity
             activeOpacity={1}
-            style = {{backgroundColor: 'rgba(255, 255, 255, 0.65)', height: maxHeight-150-220, width: maxWidth}}
+            style = {styles.comment_top_dismiss}
             onPress = {this.dismissCommentModal}>
           </TouchableOpacity>
-          <View style = {{ flexDirection: 'column', backgroundColor: 'rgb(226, 226, 226)', height: 150, widht: maxWidth}}>
-            <View style = {{paddingTop: 10, paddingLeft: 10, paddingRight: 10, flexDirection: 'row', justifyContent: 'space-between', height: 40, widht: maxWidth}}>
+          <View style = {styles.comment_input_back_view}>
+            <View style = {styles.comment_input_top_view}>
               <TouchableOpacity
                 activeOpacity={0.75}
-                style = {{}}
                 onPress = {this.dismissCommentModal}>
                 <View>
-                <Text style = {{}}>关闭</Text>
+                <Text>关闭</Text>
                 </View>
               </TouchableOpacity>
 
@@ -176,10 +175,9 @@ class MessagePage extends React.Component {
 
               <TouchableOpacity
                 activeOpacity={0.75}
-                style = {{}}
                 onPress = {this.publishComment}>
                 <View>
-                <Text style = {{}}>发送</Text>
+                <Text>发送</Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -279,7 +277,7 @@ class MessagePage extends React.Component {
             />
           }
         />
-        <View style = {{height: 40, width: maxWidth, backgroundColor: 'rgb(226, 226, 226)', padding: 5}}>
+        <View style = {styles.comment_input_page_down}>
           <TextInput style={styles.comment_input} placeholder = '  添加评论'
           onFocus = {this.textInputOnFocus}/>
         </View>
@@ -379,6 +377,13 @@ message_ctime: {
   marginTop: 10,
   marginBottom: 10,
 },
+comment_input_page_down: {
+  height: 40,
+  width: maxWidth,
+  backgroundColor: 'rgb(226, 226, 226)',
+  padding: 5,
+},
+
  comment_input:{
    backgroundColor: 'white',
    borderRadius: 4,
@@ -387,8 +392,33 @@ message_ctime: {
    height: 30,
    fontSize: 12,
    marginLeft: 5,
- }
-
+ },
+ comment_back_view: {
+   height: maxHeight,
+   widht: maxWidth,
+   backgroundColor: 'rgba(255, 255, 255, 0.65)',
+   flexDirection: 'column',
+ },
+ comment_top_dismiss: {
+   backgroundColor: 'rgba(255, 255, 255, 0.65)',
+   height: maxHeight-150-220,
+   width: maxWidth,
+ },
+ comment_input_back_view: {
+   flexDirection: 'column',
+   backgroundColor: 'rgb(226, 226, 226)',
+   height: 150,
+   widht: maxWidth,
+ },
+ comment_input_top_view: {
+   paddingTop: 10,
+   paddingLeft: 10,
+   paddingRight: 10,
+   flexDirection: 'row',
+   justifyContent: 'space-between',
+   height: 40,
+   widht: maxWidth,
+ },
 
 });
 
