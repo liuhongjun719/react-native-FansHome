@@ -124,7 +124,7 @@ class WebViewPage extends React.Component {
           transparent = {this.state.transparentState}
           onRequestClose={() => {
             this.setState({
-              isShareModal: false
+              isShowModal: false
             });
           }}
           >

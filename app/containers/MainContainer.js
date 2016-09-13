@@ -8,7 +8,6 @@ class MainContainer extends React.Component {
   componentDidMount() {
 
   }
-
   render() {
     return (
       <Main {...this.props} />

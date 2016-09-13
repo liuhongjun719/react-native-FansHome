@@ -20,13 +20,14 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import ReadingToolbar from '../components/ReadingToolbar';
 import { naviGoBack } from '../utils/CommonUtil';
 
-var stateTest = true;
 const maxHeight = Dimensions.get('window').height;
 const maxWidth = Dimensions.get('window').width;
 
 export default class SettingPage extends Component {
   constructor(props) {
       super(props);
+      this._onValueChange = this._onValueChange.bind(this);
+      this._renderRow = this._renderRow.bind(this);
       var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
       this.state = {
           dataSource: ds.cloneWithRows(['意见反馈', '评分', '版本号', '整点通知']),
@@ -35,7 +36,7 @@ export default class SettingPage extends Component {
   }
 
   _onValueChange(value) {
-    // console.log('value-------:' + value);
+    console.log('value-------:' + value);
     this.setState({
       isSwitchOn: value,
     })
@@ -53,6 +54,7 @@ export default class SettingPage extends Component {
     highlightRowFunc: (sectionID: ?number | string, rowID: ?number | string) => void,
   ) {
     // console.log('this.state.isSwitchOn:----------' + this.state.isSwitchOn);
+    console.log('kkkkkkkkkkkkkkk---------------');
     if (rowID == 0) {
       return(
         <TouchableOpacity
@@ -93,7 +95,7 @@ export default class SettingPage extends Component {
               <Text>{rowData}</Text>
               <Switch
                value = {this.state.isSwitchOn}
-               onValueChange = {this._onValueChange.bind(this)}
+               onValueChange = {this._onValueChange}
                />
           </View>
         </TouchableOpacity>
@@ -104,6 +106,7 @@ export default class SettingPage extends Component {
 
 
     render() {
+      console.log('render------------------');
       const { navigator, route } = this.props;
         return (
             <View style = {{backgroundColor: 'white', height: maxHeight, width: maxWidth}}>
@@ -114,7 +117,7 @@ export default class SettingPage extends Component {
                 <ListView
                   style = {styles.list}
                   dataSource = {this.state.dataSource}
-                  renderRow = {this._renderRow.bind(this)}
+                  renderRow = {this._renderRow}
                   />
             </View>
         );
