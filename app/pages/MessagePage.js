@@ -181,7 +181,7 @@ class MessagePage extends React.Component {
                 </View>
               </TouchableOpacity>
             </View>
-            <TextInput multiline= {true} onEndEditing= {this.dismissCommentModal} onChangeText = {this.onChangeText} style = {{height: 60, marginLeft: 10, marginRight: 10, marginBottom: 10, borderRadius: 4, backgroundColor: 'white', widht: maxWidth}} autoFocus = {true}/>
+            <TextInput multiline= {true} onEndEditing= {this.dismissCommentModal} onChangeText = {this.onChangeText} style = {{height: 60, marginLeft: 10, marginRight: 10, marginBottom: 10, borderRadius: 4, backgroundColor: 'white', width: maxWidth}} autoFocus = {true}/>
           </View>
 
         </View>
@@ -396,7 +396,7 @@ comment_input_page_down: {
  },
  comment_back_view: {
    height: maxHeight,
-   widht: maxWidth,
+   width: maxWidth,
    backgroundColor: 'rgba(255, 255, 255, 0.65)',
    flexDirection: 'column',
  },
@@ -418,7 +418,7 @@ comment_input_page_down: {
    flexDirection: 'row',
    justifyContent: 'space-between',
    height: 40,
-   widht: maxWidth,
+   width: maxWidth,
  },
 
 });
