@@ -409,7 +409,7 @@ comment_input_page_down: {
    flexDirection: 'column',
    backgroundColor: 'rgb(226, 226, 226)',
    height: 150,
-   widht: maxWidth,
+   width: maxWidth,
  },
  comment_input_top_view: {
    paddingTop: 10,
