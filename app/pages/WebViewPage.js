@@ -45,9 +45,13 @@ const maxWidth = Dimensions.get('window').width;
 class WebViewPage extends React.Component {
   constructor(props) {
     super(props);
+    this.writeComment = this.writeComment.bind(this);
+    this.showMessageModal = this.showMessageModal.bind(this);
     this.state = {
       isShowModal: false,
       transparentState: true,
+      isShowFromWriteComment: true,//点击‘写评论’图标时是true,进入MessagePage界面后直接弹出写评论弹出框；
+                                  //点击‘message图标’时为false,进入MessagePage界面后不直接弹出写评论弹出框，点击页面下方后会弹出；
     };
     this.onNavigationStateChange = this.onNavigationStateChange.bind(this);
     this.goBack = this.goBack.bind(this);
@@ -85,11 +89,12 @@ class WebViewPage extends React.Component {
   }
 
 
-  //显示评论界面
+  //显示评论界面,点击message图标
   showMessageModal() {
     this.setState({
       isShowModal: true,
       transparentState: false,
+      isShowFromWriteComment: false,
     })
   }
 
@@ -103,8 +108,16 @@ class WebViewPage extends React.Component {
   renderModalContent() {
     const { navigator, route } = this.props;
     return(
-      <MessagePage article = {route.article}/>
+      <MessagePage article = {route.article} isShowFromWriteComment = {this.state.isShowFromWriteComment}/>
     );
+  }
+
+  writeComment() {
+    this.setState({
+      isShowModal: true,
+      transparentState: false,
+      isShowFromWriteComment: true,
+    })
   }
 
 
@@ -149,7 +162,8 @@ class WebViewPage extends React.Component {
         />
         <View style = {styles.bottom_tool}>
           <TouchableOpacity
-            activeOpacity={0.75}>
+            activeOpacity={0.75}
+            onPress= {this.writeComment}>
             <View style= {{flexDirection: 'row'}}>
               <Image source = {{uri: 'write.png', height: 20, width: 20}}></Image>
               <Text style = {{marginTop: 5, marginLeft: 10, color: 'rgb(106, 106, 106)'}}>写评论</Text>
@@ -159,7 +173,7 @@ class WebViewPage extends React.Component {
 
           <TouchableOpacity
             activeOpacity={0.75}
-            onPress = {this.showMessageModal.bind(this)}
+            onPress = {this.showMessageModal}
             >
             <View style= {{flexDirection: 'row'}}>
               <Image source = {{uri: 'message.png', height: 25, width: 25}}></Image>

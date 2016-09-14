@@ -48,7 +48,7 @@ class MessagePage extends React.Component {
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
      }),
-     isShowModal: false,
+     isShowModal: this.props.isShowFromWriteComment,
      transparentState: true,
     };
 
@@ -66,7 +66,7 @@ class MessagePage extends React.Component {
 
   //获取评论列表数据
   getCommendData(){
-    var message_url = 'http://api.auto.app887.com/api/Talks.action?opc=10&npc=0&id=';
+    var message_url = 'http://api.auto.app887.com/api/Talks.action?opc=100&npc=0&id=';
     message_url += this.props.article.ID;
     // console.log('message_url=========:' + message_url);
     Util.get(message_url,(response) => {
@@ -241,6 +241,7 @@ class MessagePage extends React.Component {
   render() {
     //保存ID，用来发表评论接口时使用
     resultsCache.user_ID = this.props.article.ID;
+    console.log('isShowFromWriteComment---------------:'+ this.props.isShowFromWriteComment);
     return (
       <View>
         <View style = {styles.modal_top}>
